@@ -2,7 +2,7 @@
     'react component':
         'prefix': 'rcd',
         'body': '''
-                import React { Component } from "react"
+                import React , { Component } from "react"
                 class ${1} extends Component {
                     constructor (props) {
                         super(props)
@@ -15,5 +15,16 @@
                         )
                     }
                 }
+                ${1} = require('react-hot-loader').hot(module)(${1})
                 export default ${1}
+                '''
+    'react render dom':
+        'prefix': 'rrd'
+        'body': '''
+                import ReactDOM from "react-dom"
+                import ${1} from "./app.js${2}"
+                ReactDOM.render(
+                    <${1} />,
+                    document.getElementById('app')
+                )
                 '''
