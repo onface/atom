@@ -1,12 +1,15 @@
 '.source.js':
-    'react component':
-        'prefix': 'rcd',
+    'react component (entry)':
+        'prefix': 'rcde',
         'body': '''
                 import React , { Component } from "react"
                 class ${1} extends Component {
                     constructor (props) {
                         super(props)
                         const self = this
+                        self.state = {
+
+                        }
                     }
                     render() {
                         const self = this
@@ -18,6 +21,27 @@
                 ${1} = require('react-hot-loader').hot(module)(${1})
                 export default ${1}
                 '''
+    'react component':
+        'prefix': 'rcd',
+        'body': '''
+                import React , { Component } from "react"
+                class ${1} extends Component {
+                    constructor (props) {
+                        super(props)
+                        const self = this
+                        self.state = {
+
+                        }
+                    }
+                    render() {
+                        const self = this
+                        return (
+                            <div>node</div>
+                        )
+                    }
+                }
+                export default ${1}
+                '''
     'react render dom':
         'prefix': 'rrd'
         'body': '''
@@ -25,6 +49,34 @@
                 import ${1} from "./app.js"
                 ReactDOM.render(
                     <${1} />,
+                    document.getElementById('app')
+                )
+                '''
+    'react component example':
+        'prefix': 'rce'
+        'body': '''
+                import React , { Component } from "react"
+                import ${1} from "./app"
+                class Example extends Component {
+                    constructor (props) {
+                        super(props)
+                        const self = this
+                        self.state = {
+
+                        }
+                    }
+                    render() {
+                        const self = this
+                        return (
+                            <${1} />
+                        )
+                    }
+                }
+                Example = require('react-hot-loader').hot(module)(Example)
+
+                import ReactDOM from "react-dom"
+                ReactDOM.render(
+                    <Example />,
                     document.getElementById('app')
                 )
                 '''
