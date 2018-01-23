@@ -18,7 +18,7 @@
                         )
                     }
                 }
-                ${1} = require('react-hot-loader').hot(module)(${1})
+                /*ONFACE-DEL*/${1} = require('react-hot-loader').hot(module)(${1})
                 export default ${1}
                 '''
     'react component':
