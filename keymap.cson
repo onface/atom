@@ -1,0 +1,2 @@
+'atom-text-editor':
+    'ctrl-shift-e': 'editor:select-to-end-of-line'
