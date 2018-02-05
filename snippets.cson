@@ -46,9 +46,9 @@
         'prefix': 'rrd'
         'body': '''
                 import ReactDOM from "react-dom"
-                import ${1} from "./app.js"
+                import App from "./app.js"
                 ReactDOM.render(
-                    <${1} />,
+                    <App />,
                     document.getElementById('app')
                 )
                 '''
