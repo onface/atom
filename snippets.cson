@@ -1,4 +1,10 @@
 '.source.js':
+    'const self = this':
+        'prefix': 's',
+        'body': '''
+                const self = this
+                ${1}
+                '''
     'react component (entry)':
         'prefix': 'rcde',
         'body': '''
